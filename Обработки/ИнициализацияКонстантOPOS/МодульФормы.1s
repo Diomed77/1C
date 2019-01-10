@@ -1,0 +1,226 @@
+//-------------------------------
+Процедура Выполнить()
+	// Инициализация констант OPOS
+	СписокКонстантOPOS.УдалитьВсе();
+	// OPOS "State" Property Constants
+	СписокКонстантOPOS.Установить("OPOS_S_CLOSED",1);
+	СписокКонстантOPOS.Установить("OPOS_S_IDLE",2);
+	СписокКонстантOPOS.Установить("OPOS_S_BUSY",3);
+	СписокКонстантOPOS.Установить("OPOS_S_ERROR",4);
+
+	// OPOS "ResultCode" Property Constants
+	СписокКонстантOPOS.Установить("OPOS_SUCCESS",0);
+	СписокКонстантOPOS.Установить("OPOS_E_CLOSED",101);
+	СписокКонстантOPOS.Установить("OPOS_E_CLAIMED",102);
+	СписокКонстантOPOS.Установить("OPOS_E_NOTCLAIMED",103);
+	СписокКонстантOPOS.Установить("OPOS_E_NOSERVICE",104);
+	СписокКонстантOPOS.Установить("OPOS_E_DISABLED",105);
+	СписокКонстантOPOS.Установить("OPOS_E_ILLEGAL",106);
+	СписокКонстантOPOS.Установить("OPOS_E_NOHARDWARE",107);
+	СписокКонстантOPOS.Установить("OPOS_E_OFFLINE",108);
+	СписокКонстантOPOS.Установить("OPOS_E_NOEXIST",109);
+	СписокКонстантOPOS.Установить("OPOS_E_EXISTS",110);
+	СписокКонстантOPOS.Установить("OPOS_E_FAILURE",111);
+	СписокКонстантOPOS.Установить("OPOS_E_TIMEOUT",112);
+	СписокКонстантOPOS.Установить("OPOS_E_BUSY",113);
+	СписокКонстантOPOS.Установить("OPOS_E_EXTENDED",114);
+
+	// OPOS "BinaryConversion" Property Constants
+	СписокКонстантOPOS.Установить("OPOS_BC_NONE",0);
+	СписокКонстантOPOS.Установить("OPOS_BC_NIBBLE",1);
+	СписокКонстантOPOS.Установить("OPOS_BC_DECIMAL",2);
+
+	// "CheckHealth" Method: "Level" Parameter Constants
+	СписокКонстантOPOS.Установить("OPOS_CH_INTERNAL",1);
+	СписокКонстантOPOS.Установить("OPOS_CH_EXTERNAL",2);
+	СписокКонстантOPOS.Установить("OPOS_CH_INTERACTIVE",3);
+
+	// OPOS "CapPowerReporting", "PowerState", "PowerNotify" Property Constants
+	СписокКонстантOPOS.Установить("OPOS_PR_NONE",0);
+	СписокКонстантOPOS.Установить("OPOS_PR_STANDARD",1);
+	СписокКонстантOPOS.Установить("OPOS_PR_ADVANCED",2);
+
+	СписокКонстантOPOS.Установить("OPOS_PN_DISABLED",0);
+	СписокКонстантOPOS.Установить("OPOS_PN_ENABLED",1);
+
+	СписокКонстантOPOS.Установить("OPOS_PS_UNKNOWN",2000);
+	СписокКонстантOPOS.Установить("OPOS_PS_ONLINE",2001);
+	СписокКонстантOPOS.Установить("OPOS_PS_OFF",2002);
+	СписокКонстантOPOS.Установить("OPOS_PS_OFFLINE",2003);
+	СписокКонстантOPOS.Установить("OPOS_PS_OFF_OFFLINE",2004);
+
+	// "ErrorEvent" Event: "ErrorLocus" Parameter Constants
+	СписокКонстантOPOS.Установить("OPOS_EL_OUTPUT",1);
+	СписокКонстантOPOS.Установить("OPOS_EL_INPUT",2);
+	СписокКонстантOPOS.Установить("OPOS_EL_INPUT_DATA",3);
+
+	// "ErrorEvent" Event: "ErrorResponse" Constants
+	СписокКонстантOPOS.Установить("OPOS_ER_RETRY",11);
+	СписокКонстантOPOS.Установить("OPOS_ER_CLEAR",12);
+	СписокКонстантOPOS.Установить("OPOS_ER_CONTINUEINPUT",13);
+
+	// "StatusUpdateEvent" Event: Common "Status" Constants
+	СписокКонстантOPOS.Установить("OPOS_SUE_POWER_ONLINE",2001);
+	СписокКонстантOPOS.Установить("OPOS_SUE_POWER_OFF",2002);
+	СписокКонстантOPOS.Установить("OPOS_SUE_POWER_OFFLINE",2003);
+	СписокКонстантOPOS.Установить("OPOS_SUE_POWER_OFF_OFFLINE",2004);
+
+	// General Constants
+	СписокКонстантOPOS.Установить("OPOS_FOREVER",-1);
+
+	// Инициализация констант OPOS для дисплея покупателя
+
+	// "CapBlink" Property Constants
+	СписокКонстантOPOS.Установить("DISP_CB_NOBLINK",0);
+	СписокКонстантOPOS.Установить("DISP_CB_BLINKALL",1);
+	СписокКонстантOPOS.Установить("DISP_CB_BLINKEACH",2);
+
+	// "CapCharacterSet" Property Constants
+	СписокКонстантOPOS.Установить("DISP_CCS_NUMERIC",0);
+	СписокКонстантOPOS.Установить("DISP_CCS_ALPHA",1);
+	СписокКонстантOPOS.Установить("DISP_CCS_ASCII",998);
+	СписокКонстантOPOS.Установить("DISP_CCS_KANA",10);
+	СписокКонстантOPOS.Установить("DISP_CCS_KANJI",11);
+
+	// "CharacterSet" Property Constants
+	СписокКонстантOPOS.Установить("DISP_CS_ASCII",998);
+	СписокКонстантOPOS.Установить("DISP_CS_WINDOWS",999);
+
+	// "MarqueeType" Property Constants
+	СписокКонстантOPOS.Установить("DISP_MT_NONE",0);
+	СписокКонстантOPOS.Установить("DISP_MT_UP",1);
+	СписокКонстантOPOS.Установить("DISP_MT_DOWN",2);
+	СписокКонстантOPOS.Установить("DISP_MT_LEFT",3);
+	СписокКонстантOPOS.Установить("DISP_MT_RIGHT",4);
+	СписокКонстантOPOS.Установить("DISP_MT_INIT",5);
+
+	// "MarqueeFormat" Property Constants
+	СписокКонстантOPOS.Установить("DISP_MF_WALK",0);
+	СписокКонстантOPOS.Установить("DISP_MF_PLACE",1);
+
+	// "DisplayText" Method: "Attribute" Property Constants
+	// "DisplayTextAt" Method: "Attribute" Property Constants
+	СписокКонстантOPOS.Установить("DISP_DT_NORMAL",0);
+	СписокКонстантOPOS.Установить("DISP_DT_BLINK",1);
+
+	// "ScrollText" Method: "Direction" Parameter Constants
+	СписокКонстантOPOS.Установить("DISP_ST_UP",1);
+	СписокКонстантOPOS.Установить("DISP_ST_DOWN",2);
+	СписокКонстантOPOS.Установить("DISP_ST_LEFT",3);
+	СписокКонстантOPOS.Установить("DISP_ST_RIGHT",4);
+
+	// "SetDescriptor" Method: "Attribute" Parameter Constants
+	СписокКонстантOPOS.Установить("DISP_SD_OFF",0);
+	СписокКонстантOPOS.Установить("DISP_SD_ON",1);
+	СписокКонстантOPOS.Установить("DISP_SD_BLINK",2);
+
+	// Инициализация констант OPOS для фискального регистратора
+
+	// Fiscal Printer Station Constants
+	СписокКонстантOPOS.Установить("FPTR_S_JOURNAL",1);
+	СписокКонстантOPOS.Установить("FPTR_S_RECEIPT",2);
+	СписокКонстантOPOS.Установить("FPTR_S_SLIP",4);
+
+	// "CountryCode" Property Constants
+	СписокКонстантOPOS.Установить("FPTR_CC_BRAZIL",1);
+	СписокКонстантOPOS.Установить("FPTR_CC_GREECE",2);
+	СписокКонстантOPOS.Установить("FPTR_CC_HUNGARY",3);
+	СписокКонстантOPOS.Установить("FPTR_CC_ITALY",4);
+	СписокКонстантOPOS.Установить("FPTR_CC_POLAND",5);
+	СписокКонстантOPOS.Установить("FPTR_CC_TURKEY",6);
+
+	// "ErrorLevel" Property Constants
+	СписокКонстантOPOS.Установить("FPTR_EL_NONE",1);
+	СписокКонстантOPOS.Установить("FPTR_EL_RECOVERABLE",2);
+	СписокКонстантOPOS.Установить("FPTR_EL_FATAL",3);
+	СписокКонстантOPOS.Установить("FPTR_EL_BLOCKED",4);
+
+	// "ErrorState", "PrinterState" Property Constants
+	СписокКонстантOPOS.Установить("FPTR_PS_MONITOR",1);
+	СписокКонстантOPOS.Установить("FPTR_PS_FISCAL_RECEIPT",2);
+	СписокКонстантOPOS.Установить("FPTR_PS_FISCAL_RECEIPT_TOTAL",3);
+	СписокКонстантOPOS.Установить("FPTR_PS_FISCAL_RECEIPT_ENDING",4);
+	СписокКонстантOPOS.Установить("FPTR_PS_FISCAL_DOCUMENT",5);
+	СписокКонстантOPOS.Установить("FPTR_PS_FIXED_OUTPUT",6);
+	СписокКонстантOPOS.Установить("FPTR_PS_ITEM_LIST",7);
+	СписокКонстантOPOS.Установить("FPTR_PS_LOCKED",8);
+	СписокКонстантOPOS.Установить("FPTR_PS_NONFISCAL",9);
+	СписокКонстантOPOS.Установить("FPTR_PS_REPORT",10);
+
+	// "SlipSelection" Property Constants
+	СписокКонстантOPOS.Установить("FPTR_SS_FULL_LENGTH",1);
+	СписокКонстантOPOS.Установить("FPTR_SS_VALIDATION",2);
+
+	// "GetData" Method Constants
+	СписокКонстантOPOS.Установить("FPTR_GD_CURRENT_TOTAL",1);
+	СписокКонстантOPOS.Установить("FPTR_GD_DAILY_TOTAL",2);
+	СписокКонстантOPOS.Установить("FPTR_GD_RECEIPT_NUMBER",3);
+	СписокКонстантOPOS.Установить("FPTR_GD_REFUND",4);
+	СписокКонстантOPOS.Установить("FPTR_GD_NOT_PAID",5);
+	СписокКонстантOPOS.Установить("FPTR_GD_MID_VOID",6);
+	СписокКонстантOPOS.Установить("FPTR_GD_Z_REPORT",7);
+	СписокКонстантOPOS.Установить("FPTR_GD_GRAND_TOTAL",8);
+	СписокКонстантOPOS.Установить("FPTR_GD_PRINTER_ID",9);
+	СписокКонстантOPOS.Установить("FPTR_GD_FIRMWARE",10);
+	СписокКонстантOPOS.Установить("FPTR_GD_RESTART",11);
+
+	// "AdjustmentType" arguments in diverse methods
+	СписокКонстантOPOS.Установить("FPTR_AT_AMOUNT_DISCOUNT",1);
+	СписокКонстантOPOS.Установить("FPTR_AT_AMOUNT_SURCHARGE",2);
+	СписокКонстантOPOS.Установить("FPTR_AT_PERCENTAGE_DISCOUNT",3);
+	СписокКонстантOPOS.Установить("FPTR_AT_PERCENTAGE_SURCHARGE",4);
+
+	// "ReportType" argument in "PrintReport" method
+	СписокКонстантOPOS.Установить("FPTR_RT_ORDINAL",1);
+	СписокКонстантOPOS.Установить("FPTR_RT_DATE",2);
+
+	// "StatusUpdateEvent" Event: "Data" Parameter Constants
+	СписокКонстантOPOS.Установить("FPTR_SUE_COVER_OPEN",11);
+	СписокКонстантOPOS.Установить("FPTR_SUE_COVER_OK",12);
+
+	СписокКонстантOPOS.Установить("FPTR_SUE_JRN_EMPTY",21);
+	СписокКонстантOPOS.Установить("FPTR_SUE_JRN_NEAREMPTY",22);
+	СписокКонстантOPOS.Установить("FPTR_SUE_JRN_PAPEROK",23);
+
+	СписокКонстантOPOS.Установить("FPTR_SUE_REC_EMPTY",24);
+	СписокКонстантOPOS.Установить("FPTR_SUE_REC_NEAREMPTY",25);
+	СписокКонстантOPOS.Установить("FPTR_SUE_REC_PAPEROK",26);
+
+	СписокКонстантOPOS.Установить("FPTR_SUE_SLP_EMPTY",27);
+	СписокКонстантOPOS.Установить("FPTR_SUE_SLP_NEAREMPTY",28);
+	СписокКонстантOPOS.Установить("FPTR_SUE_SLP_PAPEROK",29);
+
+	СписокКонстантOPOS.Установить("FPTR_SUE_IDLE",1001);
+
+	// "ResultCodeExtended" Property Constants for Fiscal Printer
+	OPOSERREXT = 200;
+	СписокКонстантOPOS.Установить("OPOSERREXT",200);
+
+	СписокКонстантOPOS.Установить("POS_EFPTR_COVER_OPEN",1 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_JRN_EMPTY",2 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_REC_EMPTY",3 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_SLP_EMPTY",4 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_SLP_FORM",5 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_MISSING_DEVICES",6 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_WRONG_STATE",7 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_TECHNICAL_ASSISTANCE",8 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_CLOCK_ERROR",9 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_FISCAL_MEMORY_FULL",10 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_FISCAL_MEMORY_DISCONNECTED",11 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_FISCAL_TOTALS_ERROR",12 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_ITEM_QUANTITY",13 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_ITEM_AMOUNT",14 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_ITEM_DESCRIPTION",15 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_RECEIPT_TOTAL_OVERFLOW",16 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_VAT",17 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_PRICE",18 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_BAD_DATE",19 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_NEGATIVE_TOTAL",20 + OPOSERREXT);
+	СписокКонстантOPOS.Установить("OPOS_EFPTR_WORD_NOT_ALLOWED",21 + OPOSERREXT);
+
+КонецПроцедуры
+//-------------------------------
+Процедура ПриОткрытии()
+	Выполнить();
+	СтатусВозврата(0);
+КонецПроцедуры
